@@ -10,8 +10,11 @@ start_states = list(map(int, file.readline().split()))
 end_states = list(map(int, file.readline().split()))
 
 for line in file:
-    symbol, from_state, to_state = map(int, line.split()) 
+    from_state, symbol, to_state = map(int, line.split()) 
 
+input_string = str(input().strip())
 
 file.close()
 
+for symbol in input_string:
+    print(symbol)
