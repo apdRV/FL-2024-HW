@@ -8,8 +8,6 @@ def simulator(file_name, input_string_from_autotests = False):
     states_quantity = int(file.readline())
     alphabet_size = int(file.readline())
 
-    used = [0 for i in range(states_quantity)]
-
     start_states = list(map(int, file.readline().split()))
     end_states = list(map(int, file.readline().split()))
 
@@ -35,7 +33,6 @@ def simulator(file_name, input_string_from_autotests = False):
 
     file.close()
 
-    flag = False
     for v in start_states:
         if (dfs(v, input_string, 0)):
             return True
