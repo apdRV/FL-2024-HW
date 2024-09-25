@@ -1,3 +1,7 @@
+import re
+
+def check_string(s, n):
+    return bool(re.fullmatch(f"[0-{n-1}]*", s))
 
 def simulator(file_name, input_string_from_autotests = False):
     file = open(f'{file_name}.txt', 'r')
@@ -33,7 +37,12 @@ def simulator(file_name, input_string_from_autotests = False):
 
     file.close()
 
+    if not (check_string(input_string, alphabet_size)):
+        raise Exception("Not alphabet symbol")
+
     for v in start_states:
         if (dfs(v, input_string, 0)):
             return True
     return False
+
+simulator('tests/test1')
