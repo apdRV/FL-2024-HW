@@ -44,5 +44,3 @@ def simulator(file_name, input_string_from_autotests = False):
         if (dfs(v, input_string, 0)):
             return True
     return False
-
-simulator('tests/test1')
